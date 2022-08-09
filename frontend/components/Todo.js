@@ -1,11 +1,14 @@
+
+
 import React from 'react'
-import Form from "./Form"
 
 export default class Todo extends React.Component {
   render() {
+    console.log(this.props.list.completed)
     return (
-      <li>
-      {this.props.item.name} {this.props.item.completed ? <span>- completed</span> : <span></span>}<button>delete</button>
-      </li>)
+      <div>
+        <a href='#' onClick={() => this.props.toggleCompleted(this.props.list.id)}>{this.props.list.name}{this.props.list.completed === true ? '--Completed' : null}</a>
+      </div>
+    )
   }
 }
